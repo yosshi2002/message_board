@@ -5,20 +5,18 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class DBUtil {
-    private static final String PERSISTEMCE_UNIT_NAME  "message_baoard";
+    private static final String PERSISTENCE_UNIT_NAME = "message_board";
     private static EntityManagerFactory emf;
 
-    public static EntityManager creareEntityManager() {
+    public static EntityManager createEntityManager() {
         return getEntityManagerFactory().createEntityManager();
     }
 
     private static EntityManagerFactory getEntityManagerFactory() {
         if(emf == null) {
-            emf = Persistence.createEntityManagerFactory(PERSISTEMCE_UNIT_NAME);
+            emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         }
+
         return emf;
     }
-
-
-
 }
